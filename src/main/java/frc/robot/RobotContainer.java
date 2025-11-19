@@ -149,7 +149,7 @@ public class RobotContainer {
     drive.setDefaultCommand(
         DriveCommands.joystickDrive(
             drive,
-            () -> -controller.getLeftY(),
+            () -> controller.getLeftY(), //- (used to be)
             () -> -controller.getLeftX(),
             () -> -controller.getRightX()));
 
@@ -159,7 +159,7 @@ public class RobotContainer {
         .whileTrue(
             DriveCommands.joystickDriveAtAngle(
                 drive,
-                () -> -controller.getLeftY(),
+                () -> controller.getLeftY(), //- (used to be)
                 () -> -controller.getLeftX(),
                 () -> Rotation2d.kZero));
 
